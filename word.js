@@ -26,7 +26,7 @@ var Word = function (word) {
             console.log(`Wrong, you have ${this.guessesLeft} guesses left`)
     
         }
-        console.log(this.displayWord())
+        
     }
 
 

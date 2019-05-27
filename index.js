@@ -3,9 +3,9 @@ var inquirer = require("inquirer")
 var alphabetArr = ("abcdefghijklmnopqrstuvwxyz").split("")
 var wordsArr = ['hi', 'hello']
 
-
 var wordNow;
-
+var displayed = "";
+var currentWord= "";
 
 
 var wordTime = function () {
@@ -13,8 +13,13 @@ var wordTime = function () {
     wordNow = new Word(wordsArr[wordIndex])
    
     var getDisplay = function (wordCon) {
+        if (currentWord.length >= 1){
+          console.log("Current Word: \n" + currentWord)
+        }else{
         wordCon.letterLoop()
-        console.log("Current Word: \n" + wordNow.displayWord())
+        console.log("Current Word: \n" + wordNow.displayWord(displayed))
+        currentWord = wordNow.displayWord(displayed)
+        }
     
     }
     getDisplay(wordNow)
