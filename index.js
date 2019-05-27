@@ -15,11 +15,13 @@ var wordTime = function () {
     var getDisplay = function (wordCon) {
         if (currentWord.length >= 1){
           console.log("Current Word: \n" + wordNow.displayWord(displayed))
+          currentWord= wordNow.displayWord(displayed)
         }else{
         wordCon.letterLoop()
         console.log("Current Word: \n" + wordNow.displayWord(displayed))
         currentWord = wordNow.displayWord(displayed)
         }
+      
     
     }
     getDisplay(wordNow)
@@ -34,7 +36,14 @@ var wordTime = function () {
             if (alphabetArr.indexOf(userGuess) >= 0) {
                 wordNow.makeGuessTrue(userGuess)
                 getDisplay(wordNow)
+                if(currentWord.indexOf("-") < 0){
+                    console.log("You got it!!! Here is another word!")
+                    currentWord= ""
+                    displayed= ""
+                    wordTime()
+                }else{
                 getUserInput()
+                }
             }
 
 

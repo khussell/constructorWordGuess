@@ -26,7 +26,15 @@ var Word = function (word) {
         }
         if (trueOrFalse === false) {
             this.guessesLeft--
+            if(this.guessesLeft === 1){
+                console.log("Wrong, you have 1 guess left")
+            }else{
             console.log(`Wrong, you have ${this.guessesLeft} guesses left`)
+            }
+            if(this. guessesLeft === 0){
+                console.log("Sorry you lost!!!")
+                process.exit();
+            }
         } else {
             console.log("Correct")
         }
