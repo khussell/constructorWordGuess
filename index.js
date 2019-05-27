@@ -14,7 +14,7 @@ var wordTime = function () {
    
     var getDisplay = function (wordCon) {
         if (currentWord.length >= 1){
-          console.log("Current Word: \n" + currentWord)
+          console.log("Current Word: \n" + wordNow.displayWord(displayed))
         }else{
         wordCon.letterLoop()
         console.log("Current Word: \n" + wordNow.displayWord(displayed))
