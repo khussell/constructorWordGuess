@@ -4,7 +4,7 @@ var inquirer = require("inquirer")
 //arr to help with checking user input as a letter
 var alphabetArr = ("abcdefghijklmnopqrstuvwxyz").split("")
 //word that will be played will be randomly selected from this array
-var wordsArr = ['hi', 'hello']
+var wordsArr = ['pineapple', 'peach', 'strawberry', 'watermelon', 'papaya', 'grapefruit', 'lemon', 'lime', 'blackberry', 'blueberry', 'banana' ]
 
 //wordNow will store instance of Word for word that is in play
 var wordNow;
@@ -14,7 +14,7 @@ var currentWord= "";
 //function to start game
 var wordTime = function () {
     //randomly selecting word for play from wordsArr
-    var wordIndex = Math.floor(Math.random() * 2)
+    var wordIndex = Math.floor(Math.random() * 11)
     //creating instance of Word constructor
     wordNow = new Word(wordsArr[wordIndex])
    
